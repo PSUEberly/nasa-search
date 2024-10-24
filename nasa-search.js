@@ -61,7 +61,7 @@ export class NasaSearch extends LitElement {
     <details open>
       <summary>Search inputs</summary>
       <div>
-        <input id="input" placeholder="Search NASA images" @input="${this.inputChanged}" />
+        <input id="input" placeholder="Search NASA images!" @input="${this.inputChanged}" />
       </div>
     </details>
     <div class="results">
