@@ -44,6 +44,9 @@ export class NasaSearch extends LitElement {
         line-height: 40px;
         width: 100%;
       }
+      .wrap {
+        background-color: gray;
+      }
     `;
   }
 
@@ -58,7 +61,7 @@ export class NasaSearch extends LitElement {
   render() {
     return html`
     <h2>${this.title}</h2>
-    <details open>
+    <details class="wrap" open>
       <summary>Search inputs</summary>
       <div>
         <input id="input" placeholder="Search NASA images!" @input="${this.inputChanged}" />
