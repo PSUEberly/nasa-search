@@ -1,12 +1,16 @@
 import { LitElement, html, css } from 'lit';
 import "./nasa-image.js";
-export class NasaSearch extends LitElement {
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+
+export class NasaSearch extends DDDSuper(LitElement) {
   static get properties() {
     return {
       title: { type: String },
       loading: { type: Boolean, reflect: true },
       items: { type: Array, },
       value: { type: String },
+      alt: { type: String },
+      author: { type: String }
     };
   }
 
@@ -56,6 +60,8 @@ export class NasaSearch extends LitElement {
     this.title = '';
     this.loading = false;
     this.items = [];
+    this.alt = '';
+    this.author = '';
   }
 
   render() {
@@ -72,6 +78,8 @@ export class NasaSearch extends LitElement {
       <nasa-image
         source="${item.links[0].href}"
         title="${item.data[0].title}"
+        alt="default"
+        author="${item.data[0].secondary_creator}"
       ></nasa-image>
       `)}
     </div>

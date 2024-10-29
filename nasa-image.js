@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
+import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 
-export class NasaImage extends LitElement {
+export class NasaImage extends DDDSuper(LitElement) {
 
   constructor() {
     super();
@@ -17,7 +18,17 @@ export class NasaImage extends LitElement {
 
   static get styles() {
     return [css`
-    
+        :host {
+        display: inline-flex;
+        height: 270px;
+        max-width: 240px;
+        width: 240px;
+        margin: 8px;
+        font-family: var(--ddd-font-primary);
+        background-color: var(--ddd-theme-default-nittanyNavy);
+        font-weight: bold;
+    }
+
 
     .image {
     display: inline-block;
@@ -27,6 +38,11 @@ export class NasaImage extends LitElement {
     max-width: 240px;
     font-size: 16px;
     font-weight: bold;
+    background-color: var(--ddd-theme-default-nittanyNavy);
+    }
+
+    .image:hover {
+      opacity: 50%;
     }
 
     .image img {
