@@ -7,12 +7,14 @@ export class NasaImage extends DDDSuper(LitElement) {
     super();
     this.title = '';
     this.source = '';
+    this.owner = '';
   }
 
   static get properties() {
     return {
         source: { type: String },
         title: { type: String },
+        owner: { type: String}
     };
   }
 
@@ -60,6 +62,7 @@ export class NasaImage extends DDDSuper(LitElement) {
     <div class="image">
         <img src="${this.source}" />
         <div>${this.title}</div>
+        <div>${this.owner}</div>
     </div>
     `;
   }

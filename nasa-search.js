@@ -104,6 +104,7 @@ export class NasaSearch extends DDDSuper(LitElement) {
     }
   }
 
+
   updateResults(value) {
     this.loading = true;
     fetch(`https://images-api.nasa.gov/search?media_type=image&q=${value}`).then(d => d.ok ? d.json(): {}).then(data => {
